@@ -1,6 +1,6 @@
 WORKFLOW DEL PROGETTO
 
-La realizzazione del prodotto software inizierà con un' analisi del contesto generale del problema: usufruendo delle informazioni a nostra disposizione effettueremo un interpetazione dei requisiti a cui il programma dovrà adempiere e della finalità del software. Verranno analizzati i dati in entrata, indispensabili per la contestualizzazione e inializzazione del sistema, le precondizioni che questi dati dovranno rispettare affinchè il programma funzioni correttamente, le postcondizioni definite sui dati in uscita, ottenuti a seguito dell' elaborazione di quelli d'entrata.
+La realizzazione del prodotto software inizierà con un' analisi del contesto generale del problema: usufruendo delle informazioni a nostra disposizione effettueremo un interpetazione dei requisiti a cui il programma dovrà adempiere e della finalità del software. Poi verranno progettate e definite le modalità di utilizzo del sistema e tutti i limiti gestionali intrinsechi all'aula studio in se, vincoli imposti allo scopo di preservare la razionalità del programma. Analogalmente sarà effettuata l'analisi dei dati in entrata, indispensabili per la contestualizzazione e inializzazione del sistema, in seguito saranno determinate le precondizioni che questi dati dovranno rispettare affinchè il programma funzioni correttamente e le postcondizioni definite sui dati in uscita, dati ottenuti a seguito dell' elaborazione di quelli d'entrata.
 
 Successivamente verranno individuate le operazioni che il sistema permetterà di effettuare, per ognuna delle operazioni verrà effettuato un lavoro di analisi: formalizzando e descrivendo il problema da risolvere, individuando i dati da memorizzare ed elaborare, ragionando sulla dimensione di questi e come può cambiare nel tempo; inoltre verranno definite precondizioni, postcondizioni e side effects di ciascuna delle operazioni. Si partirà dall'analisi dell'operazione con meno dipendenze rispetto le altre, cosi che le seguenti possano sposarsi perfettamente col sistema generale, basando pre e post condizioni sul servizio offerto dalle funzioni progettate in precedenza.
 
@@ -13,22 +13,3 @@ In seguito si effettuerà la codifica ed il testing delle varie operazioni, una 
 Infine dopo aver implementato e testato correttamente tutte le operazioni del sistema si passerà alla codifica di quest' ultimo, tenendo conto dei dati di entrata e di come avverrà l'inizializzazione preliminare, il programma sarà fedele alle specifiche e alla progettazione, e permetterà di congiungere tutte le funzionalità tramite un menù d'uso intuitivo. Successivamente alla codifica si effettueranno i casi di test, identificando e documentando eventuali errori.
 
 Ovviamente il ciclo di sviluppo non termina mai, il lavoro effettuato su ciascuna delle fasi influenza e dipende strettamente dall'altra, è difatti molto frequente ritornare a fasi precedenti per effettuare modifiche, talvolta legate a mutamenti proggettuali o cambi di scelte.
-
-
-
-Lavoro su GitHub
-
-L'operato sulla piattaforma sarà organizzato in cartelle per preservare l'ordine e garantire la comprensione del progetto. La cartella principale conterrà il codice sorgente dell'applicazione.
-
-Per ogni funzionalità o modulo sviluppato, dovranno essere presenti:
-- un file per l'analisi e le specifiche;
-- un file per la progettazione;
-- un file header e un file implementativo;
-- una cartella inerente all'attività di testing.
-
-La cartella di testing conterrà i file driver eseguibili ed un file di documentazione dove verrà spiegata la scelta delle classi di test individuate. Qualora la fase di testing avesse successo, a seguito dell'attività di debugging e correzione dell'errore, tutti i casi di test saranno rieseguiti. 
-
-Inoltre, in caso di qualunque modifica del codice, sarà necessario rieffettuare la fase di testing.
-
-
-Per facilitare la collaborazione e la tracciabilità del codice, ogni sviluppatore dovrà inserire un'intestazione iniziale con il proprio nome. Inoltre ogni scelta implementativa complessa andrà motivata nel codice tramite opportuni commenti.
