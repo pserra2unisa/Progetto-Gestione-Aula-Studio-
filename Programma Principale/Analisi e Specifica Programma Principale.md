@@ -9,36 +9,50 @@ E' essenziale trovare un connubio tra limitazioni imposte funzionalmente al sist
 Inoltre è deducibile dai requisiti imposti dal cliente che esclusivamente gli studenti registrati potranno accedere all'aula studio e usufruire delle sue funzionalità.
 Il servizio dell'aula studio verra suddiviso in fasce orarie e giorni quindi è senza dubbio essenziale per la configurazione e inializazione del sistema definire il numero di posti dell'aula studio, l'orario di apertura, l'orario di chiusura, la durata di ciascuna fascia oraria e la data corrente; questi fattori sono strettamente dipendenti all'aula studio in se, quindi per mantenere la parametricità del programma è necessario richiedere le informazioni al cliente. Ovviamente affinchè il programma funzioni correttamente e mantenga un certo rigore logico c'è la necessità che questi parametri siano validi: il numero di posti non può essere nè un valore negativo o nullo, nè un valore eccessivamente elevato, si assume un valore massimo di 10.000 posti; riguardo gli orari di servizio, l'orario di apertura dovrà essere necessariamente antecedente a quello di chiusura ed inoltre il numero di fasce orarie dovrà essere consono alla durata della giornata lavorativa: l'arco di tempo di ciascuna fascia oraria, ottenuta dal calcolo della ripartizione del tempo, dovrà essere un numero intero compreso tra 1 e 4. Bisognerà imporre un limite di validità anche per la data corrente, questa dovrà essere successiva al 01/01/2000 e precedente al 01/01/3000.
 
+Dizionario dei dati
+
+| Identificatore | Tipo | Descrizione |
+| --- | --- | --- |
+| seating_cap | intero | numero di posti dell' aula  inserito in input |
+| op_time | intero | orario di apertura dell'aula  inserito in input |
+| cl_time | intero | orario di chiusura dell'aula  inserito in input |
+| time_slots | intero | numero di fasce orarie inserito in input |
+| current_date | intero | data odierna inserita in input |
+| max_p | intero | numero massimo di prenotazioni effettuabili da uno studente inserito in input |
+| max_d | intero | differenza in giorni tra il giorno odierno e l'ultimo giorno prenotabile specificata in input |
+| slot_d | intero | durata di ciascuna fascia oraria |
+|     |     |     |
+
 Dati di input:
 
-1)il numero n di posti dell' aula studio
+1)Il numero di posti dell' aula studio
 
-2)l'orario di apertura o_a e l'orario di chiusura o_c
+2)L'orario di apertura e l'orario di chiusura
 
-3)il numero di fascie orarie f
+3)Il numero di fasce orarie
 
-4)la data corrente d_c
+4)La data corrente
 
-5)il numero massimo di prenotazioni effettuabili da uno studente max_p
+5)Il numero massimo di prenotazioni effettuabili da uno studente
 
-6)Il lasso di tempo massimo prenotabile in giorni max_g
+6)Il lasso di tempo massimo prenotabile in giorni
 
 Precondizioni:
 
-1)Il numero di posti dell'aula è un valore intero positivo valido: n∈Z : 0 < n < 10.000
+1)Il numero di posti dell'aula è un valore intero positivo valido: seating_cap ∈Z : 0 < n < 10.000
 
-2)Il valore dell'orario di apertura è minore del valore dell'orario di chiusura, entrambi sono valori validi compresi tra 0 e 23: 0 <= o_a < o_c <= 23
+2)Il valore dell'orario di apertura è minore del valore dell'orario di chiusura, entrambi sono valori validi compresi tra 0 e 23: 0 <= op_time < cl_time <= 23
 
-3)Ogni fascia oraria dovrà avere la stessa durata, corrispondente ad un valore tra 1 e 4 estremi inclusi: ((o_c - o_a) / f = d, d ∈ {1, 2, 3, 4}
+3)Ogni fascia oraria dovrà avere la stessa durata, corrispondente ad un valore tra 1 e 4 estremi inclusi: ((cl_time - op_time) / time_slots = slot_d, slot_d ∈ {1, 2, 3, 4}
 
-4)La data corrente è valida: l'anno è compreso tra 2000 e 3000 estremi inclusi
+4)La data corrente è valida: l'anno di questa è compreso tra 2000 e 3000 estremi inclusi
 
 5)Il numero di prenotazioni effettuabili è valido: max_p ∈Z : 0 < max_p <= 10
 
 6)Il limite temporale di prenotazione è valido: max_d ∈Z : 0 < max_d <=20
 
-Postcondizioni: 
+Postcondizioni:
 
-Sarà effettuato il calcolo della durata di ciascuna fascia oraria d ed il sistema verrà configurato e formattato in base ad esso, inoltre il numero di posti verrà inializzato a n, la data corrente a d_c. Saranno impostati tutti i valori limite specificati dall'utente rispetto ciascuna delle operazioni.
+Sarà effettuato il calcolo della durata di ciascuna fascia oraria slot_d ed il sistema verrà configurato e formattato in base ad esso, inoltre il numero di posti verrà inializzato a seating cap, la data corrente a c_date. Saranno impostati tutti i valori limite specificati dall'utente rispetto ciascuna delle operazioni.
 
 Qual'ora qualsiasi precondizione non sia rispettata sarà concesso all'utente di riprovare l'inserimento un numero massimo di 5 volte, all'esaurirsi dei tentativi totali il programma verrà arrestato.
