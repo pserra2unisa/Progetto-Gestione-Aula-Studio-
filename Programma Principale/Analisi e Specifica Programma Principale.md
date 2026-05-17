@@ -13,14 +13,18 @@ Dizionario dei dati
 
 | Identificatore | Tipo | Descrizione |
 | --- | --- | --- |
-| seating_cap | intero | numero di posti dell' aula  inserito in input |
-| op_time | intero | orario di apertura dell'aula  inserito in input |
-| cl_time | intero | orario di chiusura dell'aula  inserito in input |
+| seating_cap | intero | numero di posti dell' aula  inserito in input |
+| op_time | intero | orario di apertura dell'aula  inserito in input |
+| cl_time | intero | orario di chiusura dell'aula  inserito in input |
 | time_slots | intero | numero di fasce orarie inserito in input |
 | current_date | intero | data odierna inserita in input |
-| max_p | intero | numero massimo di prenotazioni effettuabili da uno studente inserito in input |
+| max_r | intero | numero massimo di prenotazioni effettuabili da uno studente inserito in input |
 | max_d | intero | differenza in giorni tra il giorno odierno e l'ultimo giorno prenotabile specificata in input |
 | slot_d | intero | durata di ciascuna fascia oraria |
+| r   | bool | esito di un operazione generica |
+| S   | insieme | S = { x : x è uno studente registrato} |
+| r_n | intero | numero di prenotazioni di uno studente |
+| R   | funzione | R(student_id) -> r_n |
 |     |     |     |
 
 Dati di input:
